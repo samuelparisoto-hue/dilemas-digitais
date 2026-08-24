@@ -1,121 +1,122 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delitos Digitais</title>
+    <title>Meu Blog Tech</title>
     <style>
         body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
+            background-color: yellow;
             margin: 0;
-            padding: 20px;
+            font-family: sans-serif;
         }
 
         header {
-            background-color: #1e1e1e;
+            background-color: #183C63;
+            color: #FFFFFF;
             text-align: center;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
             padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        header h1 {
-            color: #ff4d4d;
-            margin: 0;
         }
 
         main {
-            max-width: 600px;
-            margin: 0 auto;
+            background-color: #d4adcf;
+            color: #183C63;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            padding: 30px 0;
         }
 
-        article {
-            background-color: #1e1e1e;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border-left: 5px solid #ff4d4d;
-        }
-
-        h2 {
-            margin-top: 0;
-            color: #ff4d4d;
-        }
-
-        .autor {
-            color: #888888;
+        .artigo-autor {
             font-weight: bold;
         }
 
-        button {
-            background-color: #333333;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
+        .imagem {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
         }
 
-        button:hover {
-            background-color: #555555;
+        article {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
         }
 
         footer {
+            background-color: #183C63;
+            color: white;
             text-align: center;
-            color: #888888;
-            margin-top: 30px;
+            padding: 20px;
         }
     </style>
 </head>
-<body>
 
+<body>
     <header>
-        <h1>Blog sobre Delitos Digitais</h1>
-        <p>Aprenda a se proteger de golpes na internet</p>
+        <h1>Meu blog tech</h1>
+        <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
+        <button>❤️ <span>0</span></button>
+        <button>👍 <span>0</span></button>
     </header>
 
     <main>
         <article>
-            <h2>Cuidado com o Golpe do Phishing</h2>
-            <p class="autor">Por: Alexandra</p>
-            <p>O phishing é quando golpistas enviam links falsos por mensagem ou e-mail fingindo ser bancos ou lojas para roubar suas senhas.</p>
-            <button>❤️ <span>0</span></button>
+            <div>
+                <h2>Meu primeiro post</h2>
+                <p class="artigo-autor">Por: Alexandra</p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                <button>❤️ <span>0</span></button>
+                <button>👎 <span>0</span></button>
+            </div>
+            <div>
+                <img src="anupam-raisim-kerketta-2RUSOSHt7wQ-unsplash.svg" alt="Ilustração do artigo" class="imagem">
+            </div>
         </article>
 
         <article>
-            <h2>Como Proteger Suas Senhas</h2>
-            <p class="autor">Por: Alexandra</p>
-            <p>Não use a mesma senha para tudo! Crie senhas fortes misturando letras, números e símbolos para evitar que invadam suas contas.</p>
-            <button>❤️ <span>0</span></button>
+            <div>
+                <h2>Meu segundo post</h2>
+                <p class="artigo-autor">Por: Alexandra</p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                <button>❤️ <span>0</span></button>
+                <button>👎 <span>0</span></button>
+            </div>
+            <div>
+                <img src="anupam-raisim-kerketta-2RUSOSHt7wQ-unsplash.svg" alt="Ilustração do artigo" class="imagem">
+            </div>
         </article>
     </main>
 
     <footer>
-        <p>Desenvolvido por Alexandra</p>
+        <p>&copy; 2026 Meu Blog Tech | Desenvolvido por Alexandra</p>
     </footer>
 
     <script>
         const botoes = document.querySelectorAll("button");
-
-        botoes.forEach(function(botao) {
+        botoes.forEach(function (botao) {
             let curtiu = false;
-
-            botao.addEventListener("click", function() {
-                let contador = botao.querySelector("span");
-                
+            botao.addEventListener("click", function () {
+                let texto = botao.querySelector("span");
                 if (!curtiu) {
-                    contador.textContent = Number(contador.textContent) + 1;
+                    texto.textContent++;
                     curtiu = true;
                 } else {
-                    contador.textContent = Number(contador.textContent) - 1;
+                    texto.textContent--;
                     curtiu = false;
                 }
             });
         });
     </script>
-
 </body>
+
 </html>
