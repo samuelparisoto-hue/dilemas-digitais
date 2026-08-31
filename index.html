@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delitos Digitais</title>
+    <title>Blog sobre Delitos Digitais</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             background-color: #121212;
             color: #ffffff;
@@ -16,57 +20,139 @@
         header {
             background-color: #1e1e1e;
             text-align: center;
-            padding: 20px;
+            padding: 25px 20px;
             border-radius: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         header h1 {
             color: #ff4d4d;
+            margin: 0 0 8px 0;
+            font-size: 2rem;
+        }
+
+        header p {
             margin: 0;
+            color: #cccccc;
         }
 
         main {
-            max-width: 600px;
+            max-width: 1000px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 20px;
         }
 
         article {
             background-color: #1e1e1e;
             padding: 20px;
             border-radius: 10px;
-            margin-bottom: 20px;
             border-left: 5px solid #ff4d4d;
+            display: flex;
+            flex-direction: column;
+            justify: space-between;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
         }
 
         h2 {
             margin-top: 0;
-            color: #ff4d4d;
+            margin-bottom: 5px;
+            color: #ffffff;
+            font-size: 1.4rem;
         }
 
         .autor {
             color: #888888;
-            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .content-box {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .content-box img {
+            width: 100%;
+            max-width: 200px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .solucoes-box {
+            flex: 1;
+            min-width: 200px;
+            border: 1px solid #ff4d4d;
+            border-radius: 6px;
+            padding: 12px;
+            background-color: #161616;
+        }
+
+        .solucoes-box h3 {
+            margin: 0 0 8px 0;
+            color: #ff4d4d;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .solucoes-box ol {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 0.88rem;
+            color: #dddddd;
+            line-height: 1.4;
+        }
+
+        .solucoes-box li {
+            margin-bottom: 6px;
+        }
+
+        p.descricao {
+            color: #cccccc;
+            line-height: 1.5;
+            font-size: 0.95rem;
+            margin: 0 0 15px 0;
         }
 
         button {
-            background-color: #333333;
+            background-color: #2a2a2a;
             color: white;
-            border: none;
-            padding: 10px 15px;
+            border: 1px solid #444444;
+            padding: 8px 14px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 0.9rem;
+            align-self: flex-start;
+            transition: background-color 0.2s;
         }
 
         button:hover {
-            background-color: #555555;
+            background-color: #333333;
         }
 
         footer {
             text-align: center;
             color: #888888;
-            margin-top: 30px;
+            margin-top: 40px;
+            padding: 10px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+            .content-box img {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -78,27 +164,91 @@
     </header>
 
     <main>
+        <!-- Artigo 1: Phishing -->
         <article>
-            <h2>Cuidado com o Golpe do Phishing</h2>
-            <p class="autor">Por: Alexandra</p>
-            <p>O phishing é quando golpistas enviam links falsos por mensagem ou e-mail fingindo ser bancos ou lojas para roubar suas senhas.</p>
-            <button>❤️ <span>0</span></button>
+            <div>
+                <h2>Cuidado com o Golpe do Phishing</h2>
+                <div class="autor">Por: Samuel</div>
+                
+                <div class="content-box">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=400&q=80" alt="Alerta de Segurança no Notebook">
+                    
+                    <div class="solucoes-box">
+                        <h3>Soluções</h3>
+                        <ol>
+                            <li>Verifique sempre o URL do site.</li>
+                            <li>Bancos nunca pedem senhas por mensagem.</li>
+                            <li>Use autenticação de dois fatores.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <p class="descricao">
+                    O phishing é uma das técnicas mais utilizadas por criminosos virtuais. Eles enviam e-mails ou mensagens falsas se passando por instituições confiáveis para induzir você a clicar em links maliciosos e roubar seus dados pessoais.
+                </p>
+            </div>
+            <button class="btn-curtir">curtir ❤️ <span>0</span></button>
         </article>
 
+        <!-- Artigo 2: Senhas -->
         <article>
-            <h2>Como Proteger Suas Senhas</h2>
-            <p class="autor">Por: Alexandra</p>
-            <p>Não use a mesma senha para tudo! Crie senhas fortes misturando letras, números e símbolos para evitar que invadam suas contas.</p>
-            <button>❤️ <span>0</span></button>
+            <div>
+                <h2>Como Proteger Suas Senhas</h2>
+                <div class="autor">Por: Samuel</div>
+                
+                <div class="content-box">
+                    <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=400&q=80" alt="Segurança de Senhas e Cadeado">
+                    
+                    <div class="solucoes-box">
+                        <h3>Soluções</h3>
+                        <ol>
+                            <li>Use um gerenciador de senhas.</li>
+                            <li>Crie frases secretas longas e únicas.</li>
+                            <li>Ative alertas de login em suas contas.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <p class="descricao">
+                    Reutilizar senhas em múltiplos serviços é um grande risco. Se um site for invadido, todas as suas outras contas ficam vulneráveis. Crie credenciais fortes misturando letras, números e caracteres especiais.
+                </p>
+            </div>
+            <button class="btn-curtir">curtir ❤️ <span>0</span></button>
+        </article>
+
+        <!-- Artigo 3: Cibercrimes Comuns (Largura total) -->
+        <article class="full-width">
+            <div>
+                <h2>Cibercrimes Comuns e Como Agir</h2>
+                <div class="autor">Por: Samuel</div>
+                
+                <div class="content-box">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&q=80" alt="Equipe de Segurança da Informação">
+                    
+                    <div class="solucoes-box">
+                        <h3>Soluções</h3>
+                        <ol>
+                            <li>Denuncie na delegacia especializada em crimes cibernéticos.</li>
+                            <li>Mude todas as suas senhas imediatamente ao notar atividade suspeita.</li>
+                            <li>Monitore suas contas financeiras e extratos bancários com frequência.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <p class="descricao">
+                    Golpes envolvendo malware, falsas centrais de atendimento e sequestro de contas de redes sociais estão cada vez mais sofisticados. Agir rápido ao identificar uma invasão minimiza os impactos financeiros e preserva suas informações.
+                </p>
+            </div>
+            <button class="btn-curtir">curtir ❤️ <span>0</span></button>
         </article>
     </main>
 
     <footer>
-        <p>Desenvolvido por Alexandra</p>
+        <p>Desenvolvido por Samuel</p>
     </footer>
 
     <script>
-        const botoes = document.querySelectorAll("button");
+        const botoes = document.querySelectorAll(".btn-curtir");
 
         botoes.forEach(function(botao) {
             let curtiu = false;
@@ -119,7 +269,6 @@
 
 </body>
 </html>
-
 
 
 
